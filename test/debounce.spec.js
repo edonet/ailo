@@ -12,8 +12,8 @@
  * 加载模块
  *****************************************
  */
-import delay from './delay';
-import debounce from './debounce';
+import delay from 'ailo/delay';
+import debounce from 'ailo/debounce';
 
 
 /**

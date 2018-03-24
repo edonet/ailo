@@ -12,7 +12,7 @@
  * 加载模块
  *****************************************
  */
-import compose from './compose';
+import compose from 'ailo/compose';
 
 
 /**

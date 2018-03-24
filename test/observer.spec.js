@@ -12,7 +12,7 @@
  * 加载模块
  *****************************************
  */
-import observer from './observer';
+import observer from 'ailo/observer';
 
 
 /**

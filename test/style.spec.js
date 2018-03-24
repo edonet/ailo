@@ -12,7 +12,7 @@
  * 加载模块
  *****************************************
  */
-import { transform, translate, prefixed, vendor } from './style';
+import { transform, translate, prefixed, vendor } from 'ailo/style';
 
 
 /**

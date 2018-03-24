@@ -12,7 +12,7 @@
  * 加载模块
  *****************************************
  */
-import uuid from './uuid';
+import uuid from 'ailo/uuid';
 
 
 /**

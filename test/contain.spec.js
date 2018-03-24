@@ -12,7 +12,7 @@
  * 加载模块
  *****************************************
  */
-import contain from './contain';
+import contain from 'ailo/contain';
 
 
 /**

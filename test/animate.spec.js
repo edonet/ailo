@@ -12,7 +12,7 @@
  * 加载模块
  *****************************************
  */
-import { rAF, updater, animate } from './animate';
+import { rAF, updater, animate } from 'ailo/animate';
 
 
 /**

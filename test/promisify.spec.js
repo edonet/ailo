@@ -12,7 +12,7 @@
  * 加载模块
  *****************************************
  */
-import promisify from './promisify';
+import promisify from 'ailo/promisify';
 
 
 /**

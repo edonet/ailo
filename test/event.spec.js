@@ -12,7 +12,7 @@
  * 加载模块
  *****************************************
  */
-import EventEmitter from './event';
+import EventEmitter from 'ailo/event';
 
 
 /**

@@ -26,13 +26,16 @@ const
 module.exports = {
     rootDir: dir('../'),
     roots: [
-        '<rootDir>/lib/'
+        '<rootDir>/test/'
     ],
     testMatch: [
         '**/?(*.)(spec|test).js'
     ],
     testEnvironment: 'jsdom',
     testURL: 'http://localhost',
+    moduleNameMapper: {
+        '^ailo/(.*)$': '<rootDir>/lib/$1'
+    },
     transform: {
         '^.+\\.(js|jsx)$': resolve('./jsTransform.js'),
         '^.+\\.(scss|css)$': resolve('./cssTransform.js'),

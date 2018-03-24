@@ -12,7 +12,7 @@
  * 加载模块
  *****************************************
  */
-import validate, { isString, isNumber, isBoolean, isFunction, isArray, isObject, isRegExp } from './validate';
+import validate, { isString, isNumber, isBoolean, isFunction, isArray, isObject, isRegExp } from 'ailo/validate';
 
 
 /**

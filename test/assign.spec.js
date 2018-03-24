@@ -12,7 +12,7 @@
  * 加载模块
  *****************************************
  */
-import assign from './assign';
+import assign from 'ailo/assign';
 
 
 /**

@@ -12,7 +12,7 @@
  * 加载模块
  *****************************************
  */
-import className from './className';
+import className from 'ailo/className';
 
 
 /**

@@ -13,7 +13,7 @@
  *****************************************
  */
 import React from 'react';
-import mount, { unmount } from './mount';
+import mount, { unmount } from 'ailo/mount';
 
 
 /**

@@ -12,7 +12,7 @@
  * 加载模块
  *****************************************
  */
-import delay from './delay';
+import delay from 'ailo/delay';
 
 
 /**

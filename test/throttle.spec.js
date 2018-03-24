@@ -12,8 +12,8 @@
  * 加载模块
  *****************************************
  */
-import delay from './delay';
-import throttle from './throttle';
+import delay from 'ailo/delay';
+import throttle from 'ailo/throttle';
 
 
 /**

@@ -12,7 +12,7 @@
  * 加载模块
  *****************************************
  */
-import createStore from './store';
+import createStore from 'ailo/store';
 
 
 /**

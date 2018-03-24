@@ -12,7 +12,7 @@
  * 加载模块
  *****************************************
  */
-import map from './map';
+import map from 'ailo/map';
 
 
 /**

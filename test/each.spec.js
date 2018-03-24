@@ -12,7 +12,7 @@
  * 加载依赖
  *****************************************
  */
-import each from './each';
+import each from 'ailo/each';
 
 
 /**

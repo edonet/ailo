@@ -12,7 +12,7 @@
  * 加载模块
  *****************************************
  */
-import noop from './noop';
+import noop from 'ailo/noop';
 
 
 /**

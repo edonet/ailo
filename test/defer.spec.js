@@ -12,7 +12,7 @@
  * 加载模块
  *****************************************
  */
-import defer from './defer';
+import defer from 'ailo/defer';
 
 
 /**

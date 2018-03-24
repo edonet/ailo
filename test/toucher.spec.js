@@ -12,9 +12,9 @@
  * 加载模块
  *****************************************
  */
-import Toucher from './toucher';
-import defer from './defer';
-import delay from './delay';
+import Toucher from 'ailo/toucher';
+import defer from 'ailo/defer';
+import delay from 'ailo/delay';
 
 
 /**

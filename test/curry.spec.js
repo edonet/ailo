@@ -12,8 +12,8 @@
  * 加载模块
  *****************************************
  */
-import curry, { _ } from './curry';
-import each from './each';
+import curry, { _ } from 'ailo/curry';
+import each from 'ailo/each';
 
 
 /**

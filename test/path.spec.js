@@ -12,7 +12,7 @@
  * 加载依赖
  *****************************************
  */
-import { resolve, match } from './path';
+import { resolve, match } from 'ailo/path';
 
 
 /**
