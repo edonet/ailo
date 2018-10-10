@@ -1,6 +1,6 @@
 {
     "name": "ailo",
-    "version": "0.0.101",
+    "version": "0.0.103",
     "description": "Javascript Utils",
     "main": "index.js",
     "repository": "https://github.com/edonet/ailo.git",
