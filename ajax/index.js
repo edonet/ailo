@@ -90,3 +90,4 @@ axiosInstance.interceptors.response.use(res => {
  *****************************************
  */
 export default axiosInstance;
+export { axios, qs };
