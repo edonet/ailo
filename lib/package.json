@@ -1,9 +1,0 @@
-{
-    "name": "ailo",
-    "version": "0.0.102",
-    "description": "Javascript Utils",
-    "main": "index.js",
-    "repository": "https://github.com/edonet/ailo.git",
-    "author": "edonet <edonet@163.com>",
-    "license": "MIT"
-}
