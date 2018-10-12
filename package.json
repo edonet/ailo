@@ -1,7 +1,12 @@
 {
     "name": "ailo",
-    "version": "0.0.103",
-    "keywords": ["ajax", "localStorage", "utils", "frontend"],
+    "version": "0.0.104",
+    "keywords": [
+        "ajax",
+        "localStorage",
+        "utils",
+        "frontend"
+    ],
     "description": "Javascript Utils",
     "main": "index.js",
     "repository": "https://github.com/edonet/ailo.git",
