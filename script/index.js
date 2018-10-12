@@ -32,7 +32,7 @@ export default function loader(url) {
 
         // 设置属性
         script.type = 'text/javascript';
-        script.src = url;
+        script.src = url.endsWith('.js') ? url : url + '.js';
 
         // 添加文件
         document.body.appendChild(script);
