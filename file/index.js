@@ -21,11 +21,18 @@ export default class File {
 
     /* 生成【url】 */
     toUrl() {
+
+        // 从缓存中获取
+        if (this.$url) {
+            return Promise.resolve(this.$url);
+        }
+
+        // 读取文件
         return new Promise((resolve, reject) => {
             let reader = new FileReader();
 
             // 添加监听
-            reader.onload = e => resolve(e.target.result);
+            reader.onload = e => resolve(this.$url = e.target.result);
             reader.onerror = reject;
 
             // 读取文件
