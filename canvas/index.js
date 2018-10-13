@@ -33,7 +33,7 @@ export default class Canvas {
     }
 
     /* 生成【Url】 */
-    toUrl(mime, quality) {
+    toURL(mime, quality) {
         return this.$canvas.toDataURL(mime, quality);
     }
 

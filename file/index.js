@@ -20,7 +20,7 @@ export default class File {
     }
 
     /* 生成【url】 */
-    toUrl() {
+    toURL() {
 
         // 从缓存中获取
         if (this.$url) {
@@ -39,4 +39,14 @@ export default class File {
             reader.readAsDataURL(this.$file);
         });
     }
+}
+
+
+/**
+ *****************************************
+ * 生成文件【url】
+ *****************************************
+ */
+export function readFileToURL(file) {
+    return typeof file === 'string' ? Promise.resolve(file) : (new File(file)).toURL();
 }
