@@ -26,7 +26,6 @@ export default async function resize(image, options = {}) {
         width = options.width || options.size || 1024,
         height = options.height || options.size || 1024,
         compress = options.compress !== false,
-        quality = options.quality || 0.8,
         canvas;
 
     // 加载图片
@@ -51,8 +50,8 @@ export default async function resize(image, options = {}) {
         canvas = new Canvas({ width, height });
         canvas.drawImage(image, 0, 0, width, height);
 
-        // 返回【url】
-        return canvas.toUrl('image/png', quality);
+        // 返回
+        return canvas;
     }
 
     // 处理覆缩放
@@ -67,14 +66,14 @@ export default async function resize(image, options = {}) {
         canvas = new Canvas({ width, height });
         canvas.drawImage(image, ...view, 0, 0, width, height);
 
-        // 返回【url】
-        return canvas.toUrl('image/png', quality);
+        // 返回
+        return canvas;
     }
 
     // 渲染图片
     canvas = new Canvas({ width, height });
     canvas.drawImage(image, 0, 0, width, height);
 
-    // 返回【url】
-    return canvas.toUrl('image/png', quality);
+    // 返回
+    return canvas;
 }

@@ -22,6 +22,21 @@ export default class Canvas {
         this.$canvas.height = height || 1024;
     }
 
+    /* 获取宽度 */
+    get width() {
+        return this.$canvas.width;
+    }
+
+    /* 获取高度 */
+    get height() {
+        return this.$canvas.height;
+    }
+
+    /* 获取【URL】 */
+    get url() {
+        return this.toURL();
+    }
+
     /* 清空画布 */
     clear() {
         this.$context.clearRect(0, 0, this.$canvas.width, this.$canvas.height);
