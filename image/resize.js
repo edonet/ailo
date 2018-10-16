@@ -35,7 +35,17 @@ export default async function resize(image, options = {}) {
 
     // 无需缩放
     if (compress && image.width < width && image.height < height) {
-        return image.src;
+
+        // 调整尺寸
+        width = image.width;
+        height = image.height;
+
+        // 渲染图片
+        canvas = new Canvas({ width, height });
+        canvas.drawImage(image, 0, 0, width, height);
+
+        // 返回
+        return canvas;
     }
 
     // 处理包含缩放
