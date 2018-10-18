@@ -72,3 +72,45 @@ export default class File {
 export function readFileToURL(file) {
     return typeof file === 'string' ? Promise.resolve(file) : (new File(file)).toURL();
 }
+
+
+/**
+ *****************************************
+ * 从【Base64】生成【Blob】
+ *****************************************
+ */
+export function createBlobFromBaseURL(baseURL) {
+    let [type, data] = baseURL.split(','),
+        Builder = window.WebKitBlobBuilder || window.MozBlobBuilder,
+        Blob = window.Blob || window.WebKitBlob,
+        buffer,
+        arr;
+
+
+    // 格式化数据
+    type = type.slice(5, -7);
+    data = window.atob(data);
+
+    // 创建【Buffer】
+    buffer = new ArrayBuffer(data.length);
+    arr = new Uint8Array(buffer);
+
+    // 填充数据
+    for (let i = 0, len = data.length; i < len; i ++) {
+        arr[i] = data.charCodeAt(i);
+    }
+
+    // 创建【Blob】
+    if (Blob) {
+        return new Blob([buffer], { type });
+    }
+
+    // 兼容私有方法
+    if (Builder) {
+        let builder = new Builder();
+
+        // 生成【Blob】
+        builder.append(buffer);
+        return builder.getBlob(type);
+    }
+}
