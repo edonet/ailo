@@ -57,3 +57,13 @@ export function createEvent(data = null) {
         }
     });
 }
+
+
+/**
+ *****************************************
+ * 派发事件
+ *****************************************
+ */
+export function createCustomEvent(type, detail = null) {
+    return new CustomEvent(type, { bubbles: true, cancelable: true, detail });
+}
