@@ -9,6 +9,34 @@
 
 /**
  *****************************************
+ * 定义自定义事件
+ *****************************************
+ */
+if (!window.CustomEvent) {
+    window.CustomEvent = function CustomEvent (type, options) {
+        let event;
+
+        // 合并选项
+        options = options || { bubbles: false, cancelable: false, detail: undefined };
+
+        // 创建事件
+        try {
+            event = document.createEvent('CustomEvent');
+            event.initCustomEvent(type, options.bubbles, options.cancelable, options.detail);
+        } catch (error) {
+            event = document.createEvent('Event');
+            event.initEvent(type, options.bubbles, options.cancelable);
+            event.detail = options.detail;
+        }
+
+        // 返回结果
+        return event;
+    };
+}
+
+
+/**
+ *****************************************
  * 创建事件对象
  *****************************************
  */
