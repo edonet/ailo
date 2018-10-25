@@ -72,10 +72,14 @@ axiosInstance.interceptors.request.use(
  *****************************************
  */
 axiosInstance.interceptors.response.use(res => {
-    let data = res.data;
+    let data = res.data,
+        status = (
+            ('code' in data && data.code !== 0) ||
+            ('errcode' in data && data.errcode !== 0)
+        );
 
     // 拦截错误返回
-    if (data.code !== 0) {
+    if (status) {
         throw new Error(data.message || '服务器忙，请稍后再试');
     }
 

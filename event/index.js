@@ -9,7 +9,31 @@
 
 /**
  *****************************************
- * 定义自定义事件
+ * 判断是否支持【passive】
+ *****************************************
+ */
+const passiveSupported = (() => {
+    let support = false;
+
+    // 测试是否支持
+    try {
+        window.addEventListener('test', null, {
+            get passive() {
+                return support = true;
+            }
+        });
+    } catch (error) {
+        // do nothing;
+    }
+
+    // 返回结果
+    return support;
+})();
+
+
+/**
+ *****************************************
+ * 兼容定义自定义事件
  *****************************************
  */
 if (!window.CustomEvent) {
@@ -61,9 +85,61 @@ export function createEvent(data = null) {
 
 /**
  *****************************************
- * 派发事件
+ * 创建自定义事件
  *****************************************
  */
 export function createCustomEvent(type, detail = null) {
     return new CustomEvent(type, { bubbles: true, cancelable: true, detail });
+}
+
+
+/**
+ *****************************************
+ * 创建事件配置
+ *****************************************
+ */
+export function createEventOptions(options = false) {
+
+    // 处理参数
+    if (typeof options === 'boolean') {
+        options = { capture: options };
+    }
+
+    // 返回对象
+    return passiveSupported ? options : options.capture;
+}
+
+
+/**
+ *****************************************
+ * 添加事件
+ *****************************************
+ */
+export function addEvent(el, type, callback, options) {
+
+    // 添加事件
+    el.addEventListener(type, callback, createEventOptions(options));
+
+    // 返回移除函数
+    return () => removeEvent(el, type, callback, options);
+}
+
+
+/**
+ *****************************************
+ * 移除事件
+ *****************************************
+ */
+export function removeEvent(el, type, callback, options) {
+    el.removeEventListener(type, callback, createEventOptions(options));
+}
+
+
+/**
+ *****************************************
+ * 派发事件
+ *****************************************
+ */
+export function dispatchEvent(el, type, detail) {
+    return el.dispatchEvent(createCustomEvent(type, detail));
 }
